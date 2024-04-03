@@ -23,8 +23,7 @@ anything
 abcdefghijklmnopqrstuvwxyz
 -----END RSA PRIVATE KEY-----
 `,
-		`-----BEGIN PRIVATE KEY BLOCK-----
-anything
+ 
 -----END PRIVATE KEY BLOCK-----`,
 	} // gitleaks:allow
 	return validate(r, tps, nil)

@@ -63,8 +63,7 @@ func SlackUserToken() *config.Rule {
 		`"user_token5": "xoxp-4614724432022-4621207627011-5182682871568-1ddad9823e8528ad0f4944dfa3c6fc6c"`, // gitleaks:allow
 		`"user_token6": ` + fmt.Sprintf(`"xoxp-%s-%s-%s-%s"`, secrets.NewSecret(numeric("12")), secrets.NewSecret(numeric("13")), secrets.NewSecret(numeric("13")), secrets.NewSecret(alphaNumeric("32"))),
 		// It's unclear what the `xoxe-` token means in this context, however, the format is similar to a user token.
-		`"url_private": "https:\/\/files.slack.com\/files-pri\/T04MCQMEXQ9-F04MAA1PKE3\/image.png?t=xoxe-4726837507825-4848681849303-4856614048758-e0b1f3d4cb371f92260edb0d9444d206"`,
-	}
+ 
 	fps := []string{
 		`https://docs.google.com/document/d/1W7KCxOxP-1Fy5EyF2lbJGE2WuKmu5v0suYqoHas1jRM`,
 		`"token1": "xoxp-1234567890"`, // gitleaks:allow
@@ -113,8 +112,7 @@ func SlackConfigurationToken() *config.Rule {
 		`"access_token2": "xoxe.xoxp-1-Mi0yLTMxNzcwMjQ0MTcxMy0zNjU5NDY0Njg4MTctNTE1ODE1MjY5MTcxNC01MTU4MDI0MTgyOTc5LWRmY2YwY2U4ODhhNzY5ZGU5MTAyNDU4MDJjMGQ0ZDliMTZhMjNkMmEyYzliNjkzMDRlN2VjZTI4MWNiMzRkNGQ"`, // gitleaks:allow
 		`"access_token3": "xoxe.xoxp-1-` + secrets.NewSecret(alphaNumeric("163")) + `"`,
 		`"access_token4": "xoxe.xoxb-1-Mi0yLTMxNzcwMjQ0MTcxMy0zNjU5NDY0Njg4MTctNTE1ODE1MjY5MTcxNC01MTU4MDI0MTgyOTc5LWRmY2YwY2U4ODhhNzY5ZGU5MTAyNDU4MDJjMGQ0ZDliMTZhMjNkMmEyYzliNjkzMDRlN2VjZTI4MWNiMzRkNGQ"`,
-		`"access_token5": "xoxe.xoxb-1-` + secrets.NewSecret(alphaNumeric("165")) + `"`,
-	}
+ 
 	fps := []string{
 		"xoxe.xoxp-1-SlackAppConfigurationAccessTokenHere",
 		"xoxe.xoxp-1-RANDOMSTRINGHERE",
@@ -209,8 +207,7 @@ func SlackLegacyWorkspaceToken() *config.Rule {
 	fps := []string{
 		// "xoxa-faketoken",
 		// "xoxa-access-token-string",
-		// "XOXa-nx991k",
-		"https://github.com/xoxa-nyc/xoxa-nyc.github.io/blob/master/README.md",
+ 
 	}
 	return validate(r, tps, fps)
 }

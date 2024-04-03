@@ -24,16 +24,13 @@ func TestDetect(t *testing.T) {
 		baselinePath string
 		fragment     Fragment
 		// NOTE: for expected findings, all line numbers will be 0
-		// because line deltas are added _after_ the finding is created.
-		// I.e., if the finding is from a --no-git file, the line number will be
+ 
 		// increase by 1 in DetectFromFiles(). If the finding is from git,
 		// the line number will be increased by the patch delta.
 		expectedFindings []report.Finding
 		wantError        error
-	}{
-		{
-			cfgName: "simple",
-			fragment: Fragment{
+ 
+ 
 				Raw:      `awsToken := \"AKIALALEMEL33243OKIA\ // gitleaks:allow"`,
 				FilePath: "tmp.go",
 			},
@@ -323,11 +320,10 @@ func TestDetect(t *testing.T) {
 		},
 		{
 			cfgName:      "path_only",
-			baselinePath: ".baseline.json",
 			fragment: Fragment{
 				Raw:      `const Discord_Public_Key = "e7322523fb86ed64c836a979cf8465fbd436378c653c1db38f9ae87bc62a6fd5"`,
 				FilePath: ".baseline.json",
-			},
+ 
 			expectedFindings: []report.Finding{},
 		},
 	}
